@@ -10,6 +10,6 @@ export default {
 </script>
 <style lang="scss" scoped>
   .miao {
-    color: $color
+      color: $color;
   }
 </style>
