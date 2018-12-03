@@ -6,10 +6,15 @@
 </template>
 <script>
 export default {
+  mounted () {
+    this.$store.commit('increment')
+    console.log(this.$store.state.count)
+  }
 }
 </script>
 <style lang="scss" scoped>
   .miao {
-      color: $color;
+    color: $color;
+    width: 3rem;
   }
 </style>
