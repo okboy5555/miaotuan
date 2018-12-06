@@ -1,2 +1,10 @@
+// svg通用样式
+.icon {
+  width: 2rem; height: 2rem;
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden;
+}
 // 了去身后事---你要的sass
-$color: red;
+$color: #0085ff;
+$grey: rgba(0,0,0,.5);

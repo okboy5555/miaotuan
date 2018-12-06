@@ -12,7 +12,7 @@ module.exports = {
     filenameHashing: true,
     // 运行时使用编译器的vue构建版本
     runtimeCompiler: false,
-    // 项css相关loader传递选项
+    // 向css相关loader传递选项
     css: {
         loaderOptions: {
             css: {
@@ -22,7 +22,7 @@ module.exports = {
                 // 在这里的选项会传递给postcss-loader
             },
             sass: {
-                data: `@import "@/styles/imports.scss";`
+                data: `@import "@/styles/imports.scss";@import "@/styles/common.scss";`,
             }
         }
     },

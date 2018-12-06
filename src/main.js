@@ -3,6 +3,8 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 import './plugins/element.js'
+// svg
+import './plugins/svg.js'
 
 // 深藏功与名
 Vue.config.productionTip = false
