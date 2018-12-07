@@ -1,7 +1,7 @@
 <template>
   <div class="home">
-    <div>home</div>
-    <Footer></Footer>
+      <div>mine</div>
+      <Footer></Footer>
   </div>
 </template>
 
@@ -9,7 +9,7 @@
 import Footer from '@/components/Footer.vue'
 
 export default {
-  name: 'home',
+  name: 'mine',
   components: {
     Footer
   }
