@@ -1,28 +1,10 @@
 <template>
   <div class="footer">
-    <div class="cell" @click="home">
-      <svg class="icon grey" aria-hidden="true">
-        <use xlink:href="#icon-changyonglogo40-copy"></use>
+    <div class="cell" @click="navigation(item.page,index)" v-for="(item,index) in tabbarDes" :key="item.id">
+      <svg class="icon grey" :class="{blue:item.isActive}" aria-hidden="true">
+        <use :xlink:href="item.icon"></use>
       </svg>
-      <div class="detail">首页</div>
-    </div>
-    <div class="cell" @click="find">
-      <svg class="icon grey" aria-hidden="true">
-        <use xlink:href="#icon-faxian"></use>
-      </svg>
-      <div class="detail">发现</div>
-    </div>
-    <div class="cell" @click="order">
-      <svg class="icon grey" aria-hidden="true">
-        <use xlink:href="#icon-dingdan"></use>
-      </svg>
-      <div class="detail">订单</div>
-    </div>
-    <div class="cell" @click="mine">
-      <svg class="icon grey" aria-hidden="true">
-        <use xlink:href="#icon-wode-copy"></use>
-      </svg>
-      <div class="detail">我的</div>
+      <div class="detail" :class="{blue:item.isActive}">{{item.txt}}</div>
     </div>
   </div>
 </template>
@@ -31,20 +13,47 @@
 export default {
   name: 'Footer',
   props: {
-    msg: String
+  },
+  data: function () {
+    return {
+      tabbarDes: [
+        {
+          txt: '首页',
+          page: 'home',
+          icon: '#icon-changyonglogo40-copy',
+          isActive: 0
+        },
+        {
+          txt: '发现',
+          page: 'find',
+          icon: '#icon-faxian',
+          isActive: 0
+        },
+        {
+          txt: '订单',
+          page: 'order',
+          icon: '#icon-dingdan',
+          isActive: 0
+        },
+        {
+          txt: '我的',
+          page: 'mine',
+          icon: '#icon-wode-copy',
+          isActive: 0
+        }
+      ]
+    }
   },
   methods: {
-    home: function () {
-      this.$router.push('/home')
-    },
-    find: function () {
-      this.$router.push('/find')
-    },
-    order: function () {
-      this.$router.push('/order')
-    },
-    mine: function () {
-      this.$router.push('/mine')
+    navigation: function (page, index) {
+      this.tabbarDes.forEach(e => {
+        if (e.page === page) {
+          e.isActive = 1
+        } else {
+          e.isActive = 0
+        }
+      })
+      this.$router.push('/' + page)
     }
   }
 }
@@ -80,5 +89,8 @@ export default {
       height: 1.5rem;
       width: 1.5rem;
     }
+  }
+  .blue {
+    color: $color !important;
   }
 </style>
