@@ -8,11 +8,11 @@ import Mine from './views/Mine.vue'
 Vue.use(Router)
 
 export default new Router({
+  linkActiveClass: 'blue',
   routes: [
     {
-      path: '/',
-      name: 'home',
-      component: Home
+      path: '',
+      redirect: '/home'
     },
     {
       path: '/home',

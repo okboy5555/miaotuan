@@ -1,11 +1,11 @@
 <template>
   <div class="footer">
-    <div class="cell" @click="navigation(item.page,index)" v-for="(item,index) in tabbarDes" :key="item.id">
-      <svg class="icon grey" :class="{blue:item.isActive}" aria-hidden="true">
+    <router-link class="cell" :to="item.page" tag="div" v-for="item in tabbarDes" :key="item.id">
+      <svg class="icon grey" aria-hidden="true">
         <use :xlink:href="item.icon"></use>
       </svg>
-      <div class="detail" :class="{blue:item.isActive}">{{item.txt}}</div>
-    </div>
+      <div class="detail">{{item.txt}}</div>
+    </router-link>
   </div>
 </template>
 
@@ -91,6 +91,8 @@ export default {
     }
   }
   .blue {
-    color: $color !important;
+    svg,.detail{
+      color: $color !important;
+    }
   }
 </style>
