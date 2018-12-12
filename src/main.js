@@ -10,7 +10,6 @@ import './plugins/svg.js'
 
 // 深藏功与名
 Vue.config.productionTip = false
-
 const requireComponent = require.context(
   // 其组件目录的相对路径
   './components',
