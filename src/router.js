@@ -1,10 +1,31 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from './views/Home.vue'
-import Find from './views/Find.vue'
-import Order from './views/Order.vue'
-import Mine from './views/Mine.vue'
 
+const Home = (resolve) => {
+  import('./views/Home').then((module) => {
+    resolve(module)
+  })
+}
+const Find = (resolve) => {
+  import('./views/Find').then((module) => {
+    resolve(module)
+  })
+}
+const Order = (resolve) => {
+  import('./views/Order').then((module) => {
+    resolve(module)
+  })
+}
+const Mine = (resolve) => {
+  import('./views/Mine').then((module) => {
+    resolve(module)
+  })
+}
+// const Search = (resolve) => {
+//   import('').then((module) => {
+//     resolve(module)
+//   })
+// }
 Vue.use(Router)
 
 export default new Router({
@@ -17,22 +38,38 @@ export default new Router({
     {
       path: '/home',
       name: 'home',
-      component: Home
+      component: Home,
+      meta: {
+        title: '首页'
+      },
+      children: {
+        path: '/search',
+        component: Search
+      }
     },
     {
       path: '/find',
       name: 'find',
-      component: Find
+      component: Find,
+      meta: {
+        title: '发现'
+      }
     },
     {
       path: '/order',
       name: 'order',
-      component: Order
+      component: Order,
+      meta: {
+        title: '订单'
+      }
     },
     {
       path: '/mine',
       name: 'mine',
-      component: Mine
+      component: Mine,
+      meta: {
+        title: '我的'
+      }
     },
     {
       path: '/about',
