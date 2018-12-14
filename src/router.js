@@ -21,11 +21,11 @@ const Mine = (resolve) => {
     resolve(module)
   })
 }
-// const Search = (resolve) => {
-//   import('').then((module) => {
-//     resolve(module)
-//   })
-// }
+const Search = (resolve) => {
+  import('./views/Search').then((module) => {
+    resolve(module)
+  })
+}
 Vue.use(Router)
 
 export default new Router({
@@ -41,10 +41,6 @@ export default new Router({
       component: Home,
       meta: {
         title: '首页'
-      },
-      children: {
-        path: '/search',
-        component: Search
       }
     },
     {
@@ -70,6 +66,11 @@ export default new Router({
       meta: {
         title: '我的'
       }
+    },
+    {
+      path: '/search',
+      name: 'search',
+      component: Search
     },
     {
       path: '/about',
