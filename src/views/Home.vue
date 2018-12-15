@@ -11,65 +11,27 @@
       </div>
     </div>
     <div class="select">
-      <div >
+      <router-link class="" :to="item.page" tag="div" v-for="item in tabbarDes" :key="item.id">
         <svg class="icon grey" aria-hidden="true">
-          <use xlink:href="#icon-changyonglogo40-copy"></use>
+            <use :xlink:href="item.icon"></use>
         </svg>
-      </div>
-      <div >
-        <svg class="icon grey" aria-hidden="true">
-          <use xlink:href="#icon-changyonglogo40-copy"></use>
-        </svg>
-      </div>
-      <div >
-        <svg class="icon grey" aria-hidden="true">
-          <use xlink:href="#icon-changyonglogo40-copy"></use>
-        </svg>
-      </div>
-      <div >
-        <svg class="icon grey" aria-hidden="true">
-          <use xlink:href="#icon-changyonglogo40-copy"></use>
-        </svg>
-      </div>
-      <div >
-        <svg class="icon grey" aria-hidden="true">
-          <use xlink:href="#icon-changyonglogo40-copy"></use>
-        </svg>
-      </div>
-      <div >
-        <svg class="icon grey" aria-hidden="true">
-          <use xlink:href="#icon-changyonglogo40-copy"></use>
-        </svg>
-      </div>
-      <div >
-        <svg class="icon grey" aria-hidden="true">
-          <use xlink:href="#icon-changyonglogo40-copy"></use>
-        </svg>
-      </div>
-      <div >
-        <svg class="icon grey" aria-hidden="true">
-          <use xlink:href="#icon-changyonglogo40-copy"></use>
-        </svg>
-      </div>
-      <div >
-        <svg class="icon grey" aria-hidden="true">
-          <use xlink:href="#icon-changyonglogo40-copy"></use>
-        </svg>
-      </div>
-      <div >
-        <svg class="icon grey" aria-hidden="true">
-          <use xlink:href="#icon-changyonglogo40-copy"></use>
-        </svg>
-      </div>
+        <div class="detail">{{item.txt}}</div>
+      </router-link>
     </div>
+    <div class="shop-title">
+      推荐商家
+    </div>
+    <shoplist></shoplist>
     <Footer></Footer>
   </div>
 </template>
 
 <script>
+import shoplist from '@/components/shoplist.vue'
 export default {
   name: 'home',
   components: {
+    shoplist
   },
   props: {
     title: String
@@ -80,53 +42,53 @@ export default {
       tabbarDes: [
         {
           txt: '美食',
-          page: 'home',
-          icon: '#icon-changyonglogo40-copy'
+          page: 'food',
+          icon: '#icon-icon-test'
         },
         {
           txt: '晚餐',
           page: 'find',
-          icon: '#icon-faxian'
+          icon: '#icon-dinner'
         },
         {
           txt: '商超便利',
           page: 'order',
-          icon: '#icon-dingdan'
+          icon: '#icon-gouwu'
         },
         {
           txt: '水果',
           page: 'mine',
-          icon: '#icon-wode-copy'
+          icon: '#icon-shuiguo'
         },
         {
           txt: '医疗健康',
           page: 'mine',
-          icon: '#icon-wode-copy'
+          icon: '#icon-yiliaotuandui'
         },
         {
           txt: '鲜花绿植',
           page: 'mine',
-          icon: '#icon-wode-copy'
+          icon: '#icon-hua'
         },
         {
           txt: '厨房生鲜',
           page: 'mine',
-          icon: '#icon-wode-copy'
+          icon: '#icon-shengxian-pangxie'
         },
         {
           txt: '跑腿代购',
           page: 'mine',
-          icon: '#icon-wode-copy'
+          icon: '#icon-_waimai'
         },
         {
           txt: '甜品饮品',
           page: 'mine',
-          icon: '#icon-wode-copy'
+          icon: '#icon-naicha'
         },
         {
           txt: '签到领红包',
           page: 'mine',
-          icon: '#icon-wode-copy'
+          icon: '#icon-qiandao'
         }
       ]
     }
@@ -142,6 +104,9 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
+  .home {
+    background: #fff;
+  }
   .search {
     background: #0085ff;
   }
@@ -152,11 +117,39 @@ export default {
   }
   .select {
     display: flex;
-    height: 5rem;
+    padding-top: 1rem;
+    height: 8rem;
     flex-wrap: wrap;
     justify-content: center;
     div {
       width: 20%;
+    }
+    .detail {
+      margin: 0 auto;
+      width: 4rem;
+      font-size: .5rem;
+      color: $grey;
+    }
+  }
+  .shop-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: .8rem;
+    color: $grey;
+    height: 2rem;
+    &:after,&:before {
+      display: block;
+      content: "";
+      width: 3rem;
+      height: .063rem;
+      background-color: #999;
+    }
+    &:after {
+      margin-left: .5rem;
+    }
+    &:before {
+      margin-right: .5rem;
     }
   }
 </style>
