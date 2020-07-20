@@ -15,20 +15,12 @@ module.exports = {
   // 向css相关loader传递选项
   css: {
     loaderOptions: {
-      css: {
-        // 在这里的选项会传递给css-loader
-      },
-      postcss: {
-        // 在这里的选项会传递给postcss-loader
-      },
       sass: {
-        // prependData: `@import "@/styles/imports.scss";@import "@/styles/common.scss";`
-        sassOptions: {
-          prependnData: `~@import "@/styles/imports.scss";@import "~@/styles/common.scss";`
-        }
+        additionalData: `@import "@/styles/imports.scss";@import "@/styles/common.scss";`
       }
     }
   },
+
   // webpakc配置
   // webpack-dev-server
   devServer: {
