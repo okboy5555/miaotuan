@@ -14,7 +14,7 @@
         <div class="detail">{{item.txt}}</div>
       </router-link>
     </div>
-    <div class="shop-title">推荐商家</div>
+    <div class="shop-title">推荐商家1</div>
     <shoplist></shoplist>
     <Footer></Footer>
   </div>
