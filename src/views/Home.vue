@@ -3,24 +3,18 @@
     <Header></Header>
     <div class="search" @click="searchBtn">
       <div class="search-input-suffix">
-        <el-input
-          placeholder="搜索商家，商品名称"
-          prefix-icon="el-icon-search"
-          v-model="search">
-        </el-input>
+        <el-input placeholder="搜索商家，商品名称" prefix-icon="el-icon-search" v-model="search"></el-input>
       </div>
     </div>
     <div class="select">
-      <router-link class="" :to="item.page" tag="div" v-for="item in tabbarDes" :key="item.id">
+      <router-link class :to="item.page" tag="div" v-for="item in tabbarDes" :key="item.id">
         <svg class="icon grey" aria-hidden="true">
-            <use :xlink:href="item.icon"></use>
+          <use :xlink:href="item.icon" />
         </svg>
         <div class="detail">{{item.txt}}</div>
       </router-link>
     </div>
-    <div class="shop-title">
-      推荐商家
-    </div>
+    <div class="shop-title">推荐商家</div>
     <shoplist></shoplist>
     <Footer></Footer>
   </div>
@@ -104,52 +98,53 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-  .home {
-    background: #fff;
+.home {
+  background: #fff;
+}
+.search {
+  background: #0085ff;
+}
+.search-input-suffix {
+  margin: 0 auto;
+  width: 21rem;
+  height: 3rem;
+}
+.select {
+  display: flex;
+  padding-top: 1rem;
+  height: 8rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  div {
+    width: 20%;
   }
-  .search {
-    background: #0085ff;
-  }
-  .search-input-suffix {
+  .detail {
     margin: 0 auto;
-    width: 21rem;
-    height: 3rem;
-  }
-  .select {
-    display: flex;
-    padding-top: 1rem;
-    height: 8rem;
-    flex-wrap: wrap;
-    justify-content: center;
-    div {
-      width: 20%;
-    }
-    .detail {
-      margin: 0 auto;
-      width: 4rem;
-      font-size: .5rem;
-      color: $grey;
-    }
-  }
-  .shop-title {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: .8rem;
+    width: 4rem;
+    font-size: 0.5rem;
     color: $grey;
-    height: 2rem;
-    &:after,&:before {
-      display: block;
-      content: "";
-      width: 3rem;
-      height: .063rem;
-      background-color: #999;
-    }
-    &:after {
-      margin-left: .5rem;
-    }
-    &:before {
-      margin-right: .5rem;
-    }
   }
+}
+.shop-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  color: $grey;
+  height: 2rem;
+  &:after,
+  &:before {
+    display: block;
+    content: '';
+    width: 3rem;
+    height: 0.063rem;
+    background-color: #999;
+  }
+  &:after {
+    margin-left: 0.5rem;
+  }
+  &:before {
+    margin-right: 0.5rem;
+  }
+}
 </style>
