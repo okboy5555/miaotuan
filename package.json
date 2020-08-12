@@ -8,6 +8,7 @@
     "dev": "vue-cli-service serve"
   },
   "dependencies": {
+    "axios": "^0.19.2",
     "element-ui": "^2.13.2",
     "vue": "^2.6.11",
     "vue-router": "^3.3.4",

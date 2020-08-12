@@ -5,8 +5,12 @@ import store from './store'
 import './plugins/element.js'
 import upperFirst from 'lodash/upperFirst'
 import camelCase from 'lodash/camelCase'
+import ErrorPlugin from './plugins/errorPlugin'
 // svg
 import './plugins/svg.js'
+
+// 引入vueerror捕获报错
+Vue.use(ErrorPlugin)
 
 // 深藏功与名
 Vue.config.productionTip = false

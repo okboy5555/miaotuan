@@ -22,10 +22,14 @@
 
 <script>
 import shoplist from '@/components/shoplist.vue'
+// import axios from 'axios'
+
 export default {
   name: 'home',
   components: {
     shoplist
+  },
+  mounted () {
   },
   props: {
     title: String
