@@ -9,10 +9,15 @@ import axios from "axios"
 function isPromise (ret) {
   return (ret && typeof ret.then === 'function' && typeof ret.catch === "function")
 }
+
 const errorHandler = (error, vm, info) => {
-  // axios.post('/test', {
-  //     error
-  // })
+  axios({
+    method: 'post',
+    url: '/test',
+    data: {
+      error: error.stack
+    }
+  })
   console.error('抛出全局异常')
   // console.error(vm)
   // console.error(error)
