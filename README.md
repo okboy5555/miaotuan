@@ -5,6 +5,7 @@
 
 技术栈vue 2.x + vue-cli 3.x + sass +es6
 icon暂时用的阿里的图标库，够用（不会设计ui）
+现已改造成ssr
 
 ## Project setup
 ```
