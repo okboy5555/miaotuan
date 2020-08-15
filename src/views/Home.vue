@@ -30,6 +30,7 @@ export default {
     shoplist
   },
   mounted () {
+    console.log('2333')
   },
   props: {
     title: String

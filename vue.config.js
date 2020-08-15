@@ -1,4 +1,5 @@
-const path = require("path");
+const path = require("path")
+
 module.exports = {
   // 基本路径
   publicPath: "/",
@@ -27,9 +28,26 @@ module.exports = {
     open: true, // 是否自动打开浏览器
     host: "0.0.0.0",
     port: "8888",
-    https: false // 是否开启https
+    https: false, // 是否开启https
     // proxy: {
-    //     // 配置代理
+    //   "/": {
+    //     changeOrigin: true,
+    //     target: 'http://api.xxx.cn/'
+    //   }
+    //   // 配置代理
     // }
+  },
+  configureWebpack: config => {
+    if (process.env.NODE_ENV === 'production') {
+      // 移除console
+      config.optimization.minimizer[0].options.terserOptions.compress.drop_console = true
+      console.log('我是生产环境')
+      // 为生产环境修改配置...
+    } else {
+      //  todo  似乎开发环境无效 存疑
+      config.optimization.minimizer[0].options.terserOptions.compress.drop_console = true
+      console.log('我是开发环境')
+      // 为开发环境修改配置...
+    }
   }
-};
+}
