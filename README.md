@@ -19,12 +19,8 @@ npm run dev
 
 ### Compiles and minifies for production
 ```
-npm run build
-```
-
-### Run your tests
-```
-npm run test
+npm run build:mac
+npm run build:win
 ```
 
 ### Lints and fixes files
@@ -42,3 +38,9 @@ node版本为12.18.2
 因为导入了sass，所以装的时候比较麻烦，尽量保持版本一致，相关sass安装问题请看sass官网
 推荐使用npm并且命令行翻墙的形式安装sass
 后面我再把sass替换掉吧~
+
+
+服务端遗留问题
+```
+vue.runtime.esm.js:619 [Vue warn]: The client-side rendered virtual DOM tree is not matching server-rendered content. This is likely caused by incorrect HTML markup, for example nesting block-level elements inside <p>, or missing <tbody>. Bailing hydration and performing full client-side render.
+```
