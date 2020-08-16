@@ -7,14 +7,14 @@
 </template>
 
 <script>
-// import Header from '@/components/Header.vue'
-// import Footer from '@/components/Footer.vue'
+import Header from '@/components/common/Header.vue'
+import Footer from '@/components/common/Footer.vue'
 
 export default {
   name: 'order',
   components: {
-    // Header,
-    // Footer
+    Header,
+    Footer
   }
 }
 </script>

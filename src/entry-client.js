@@ -1,4 +1,6 @@
 import { createApp } from './main'
+import './plugins/svg.js'
+import './plugins/element.js'
 
 // 客户端特定引导逻辑……
 const { app } = createApp()
