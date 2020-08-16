@@ -127,7 +127,7 @@ export default {
     margin: 0 auto;
     width: 4rem;
     font-size: 0.5rem;
-    color: $grey;
+    // color: $grey;
   }
 }
 .shop-title {
@@ -135,7 +135,7 @@ export default {
   align-items: center;
   justify-content: center;
   font-size: 0.8rem;
-  color: $grey;
+  // color: $grey;
   height: 2rem;
   &:after,
   &:before {
