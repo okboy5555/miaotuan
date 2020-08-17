@@ -1,8 +1,9 @@
 <template>
-  <div class="about">
+  <!-- <div class="about">
     <h1 class="miao">This is an about page</h1>
     <div></div>
-  </div>
+  </div> -->
+  <div></div>
 </template>
 <script>
 export default {
@@ -14,7 +15,7 @@ export default {
 </script>
 <style lang="scss" scoped>
   .miao {
-    // color: $color;
+    color: $color;
     width: 3rem;
   }
 </style>

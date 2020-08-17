@@ -35,6 +35,7 @@ module.exports = {
   // },
   configureWebpack: () => ({
     // 将 entry 指向应用程序的 server / client 文件
+    mode: 'production',
     entry: `./src/entry-${target}.js`,
     // 对 bundle renderer 提供 source map 支持
     devtool: 'source-map',

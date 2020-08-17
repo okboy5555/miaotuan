@@ -34,6 +34,8 @@ export default {
     Footer
   },
   mounted () {
+    // const data = {}
+    // data.e.s = 3
     console.log('2333')
   },
   props: {
