@@ -8,8 +8,8 @@
 <script>
 export default {
   mounted () {
-    this.$store.commit('increment')
-    console.log(this.$store.state.count)
+    // this.$store.commit('increment')
+    // console.log(this.$store.state.count)
   }
 }
 </script>
