@@ -26,15 +26,25 @@ const Search = (resolve) => {
     resolve(module)
   })
 }
+const UserProfile = (resolve) => {
+  import('./views/test/UserProfile').then(module => {
+    resolve(module)
+  })
+}
+const UserPosts = (resolve) => {
+  import('./views/test/UserPosts').then(module => {
+    resolve(module)
+  })
+}
 Vue.use(Router)
 
 export function createRouter () {
-  return new Router({
+  const router = new Router({
     mode: 'history',
     linkActiveClass: 'blue',
     routes: [
       {
-        path: '',
+        path: '*',
         redirect: '/home'
       },
       {
@@ -51,7 +61,17 @@ export function createRouter () {
         component: Find,
         meta: {
           title: '发现'
-        }
+        },
+        children: [
+          {
+            path: 'profile',
+            component: UserProfile
+          },
+          {
+            path: 'posts',
+            component: UserPosts
+          }
+        ]
       },
       {
         path: '/order',
@@ -84,4 +104,9 @@ export function createRouter () {
       }
     ]
   })
+  router.beforeEach((to, from, next) => {
+    console.log(to, from)
+    next()
+  })
+  return router
 }

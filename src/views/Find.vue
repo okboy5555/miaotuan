@@ -5,6 +5,8 @@
       <input type="text" v-focus />
       {{count}}{{a}}
     </div>
+    <router-view></router-view>
+    <button @click="toOrder">我是按钮</button>
     <Footer></Footer>
   </div>
 </template>
@@ -30,6 +32,14 @@ export default {
   //   this.$store.commit('increment')
   //   console.log(this.$store.state.count)
   // }
+  methods: {
+    toOrder () {
+      this.$router.push('order')
+    }
+  },
+  mounted () {
+
+  },
   computed: {
     test () {
       return this.a
